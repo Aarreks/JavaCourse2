@@ -24,7 +24,13 @@ public abstract class Shape {
         this.name = name;
     }
 
-
+    public boolean canFitInside(Shape s)
+    {
+        return (this != s) 
+            && (this instanceof TwoDimensionalShape)
+            && (s instanceof TwoDimensionalShape) 
+            && (this.calculatePerimeter() <= s.calculatePerimeter());
+    }
 
     // TODO replace this with perimiter methods
     public static double calculateHypotenuse(int width, int height)
